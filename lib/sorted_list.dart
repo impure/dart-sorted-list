@@ -121,7 +121,7 @@ class SortedList<E> extends DelegatingList<E> {
   /// step for if we expect most items to be at position n + 1.
   void addCheckLastElementFirst(E item) {
     if (_compare(this[length - 1], item) < 0) {
-      super.insert(length, value);
+      super.insert(length, item);
       return;
     }
     add(item);
