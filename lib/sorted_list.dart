@@ -119,12 +119,12 @@ class SortedList<E> extends DelegatingList<E> {
   /// Similar to [add] but checks if we should insert the item
   /// into the n + 1 position first. This is an optimization
   /// step for if we expect most items to be at position n + 1.
-  void addCheckLastElementFirst(E item) {
-    if (_compare(this[length - 1], item) < 0) {
-      super.insert(length, item);
+  void addCheckLastElementFirst(E value) {
+    if (_compare(this[length - 1], value) < 0) {
+      super.insert(length, value);
       return;
     }
-    add(item);
+    add(value);
   }
 
   /// Adds all objects of [iterable] to this list.
