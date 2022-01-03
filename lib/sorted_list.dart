@@ -120,7 +120,7 @@ class SortedList<E> extends DelegatingList<E> {
   /// into the n + 1 position first. This is an optimization
   /// step for if we expect most items to be at position n + 1.
   void addCheckLastElementFirst(E value) {
-    if (_compare(this[length - 1], value) < 0) {
+    if (isNotEmpty && _compare(this[length - 1], value) < 0) {
       super.insert(length, value);
       return;
     }
